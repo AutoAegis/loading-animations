@@ -2,33 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>18 Cinematic Loaders</title>
+<title>27 Cinematic Loaders</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 <style>
-body{
-    margin:0;
-    font-family:Poppins,sans-serif;
-    height:100vh;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    background:#111;
-    overflow:hidden;
-}
-button{
-    padding:12px 28px;
-    border-radius:12px;
-    border:none;
-    cursor:pointer;
-    font-size:15px;
-    transition:transform .2s, box-shadow .3s, background .5s;
-}
-button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 24px rgba(0,0,0,.5);
-}
+body{margin:0;font-family:Poppins,sans-serif;height:100vh;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;background:#111;overflow:hidden;}
+button{padding:12px 28px;border-radius:12px;border:none;cursor:pointer;font-size:15px;transition:transform .2s, box-shadow .3s, background .5s;}
+button:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.5);}
 .btn1{background:linear-gradient(135deg,#ff8a00,#ff3d81);color:white;}
 .btn2{background:linear-gradient(135deg,#00f5a0,#00d9f5);color:#001;}
 .btn3{background:linear-gradient(135deg,#7f5cff,#00ffe1);color:#fff;}
@@ -47,26 +26,19 @@ button:hover{
 .btn16{background:linear-gradient(135deg,#00ffff,#0033ff);color:#111;}
 .btn17{background:linear-gradient(135deg,#ff0099,#9900ff);color:white;}
 .btn18{background:linear-gradient(135deg,#33ff00,#009900);color:#111;}
+.btn19{background:linear-gradient(135deg,#ff3399,#33ffff);color:#111;}
+.btn20{background:linear-gradient(135deg,#ff5500,#ffee33);color:#111;}
+.btn21{background:linear-gradient(135deg,#33ff66,#3399ff);color:#111;}
+.btn22{background:linear-gradient(135deg,#ff00cc,#cc00ff);color:#fff;}
+.btn23{background:linear-gradient(135deg,#00ffaa,#00ff55);color:#111;}
+.btn24{background:linear-gradient(135deg,#ffaa33,#ff33aa);color:#111;}
+.btn25{background:linear-gradient(135deg,#33ccff,#33ffcc);color:#111;}
+.btn26{background:linear-gradient(135deg,#ff4444,#ffcc44);color:#111;}
+.btn27{background:linear-gradient(135deg,#00ffcc,#0033cc);color:#fff;}
 
-.loader-overlay{
-    position:fixed;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .6s ease, background .5s ease, transform .6s ease;
-    z-index:1000;
-    transform:scale(0.8);
-}
-.loader-overlay.active{
-    opacity:1;
-    pointer-events:auto;
-    transform:scale(1);
-}
+.loader-overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition:opacity .6s ease,background .5s ease,transform .6s ease;z-index:1000;transform:scale(0.8);}
+.loader-overlay.active{opacity:1;pointer-events:auto;transform:scale(1);}
 
-/* Base Animations */
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes bounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
 @keyframes pulse{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.2);opacity:0}}
@@ -78,8 +50,9 @@ button:hover{
 @keyframes slideBar{0%{transform:scaleX(.3)}100%{transform:scaleX(1)}}
 @keyframes particleFly{0%{transform:translateY(0) translateX(0)}100%{transform:translateY(-50px) translateX(30px)}}
 @keyframes vortexSpin{0%{transform:rotate(0deg) translateX(0)}100%{transform:rotate(360deg) translateX(20px)}}
+@keyframes ripple{0%{transform:scale(0.5);opacity:0.7}50%{transform:scale(1.2);opacity:0.3}100%{transform:scale(0.5);opacity:0.7}}
 
-/* Loader Styles */
+/* Loaders 1-27 */
 .loader1{width:70px;height:70px;border-radius:50%;border:6px solid rgba(255,255,255,.15);border-top-color:#ff3d81;animation:spin 1s linear infinite;box-shadow:0 0 20px #ff3d81 inset,0 0 40px #ff8a00;}
 .loader2{display:flex;gap:12px;}
 .loader2 span{width:18px;height:18px;background:#00f5a0;border-radius:50%;animation:bounce 1.2s infinite ease-in-out;box-shadow:0 0 15px #00f5a0;}
@@ -109,8 +82,6 @@ button:hover{
 .loader9 span{height:12px;background:#00ffd5;border-radius:6px;animation:slideBar 1.2s infinite alternate;box-shadow:0 0 15px #00ffd5;}
 .loader9 span:nth-child(2){animation-delay:.2s;}
 .loader9 span:nth-child(3){animation-delay:.4s;}
-
-/* Ultra advanced loaders */
 .loader10{width:80px;height:80px;border-radius:50%;background:linear-gradient(45deg,#ff00ff,#ff9900);box-shadow:0 0 25px #ff00ff,0 0 50px #ff9900 inset;animation:spin 1.2s linear infinite;}
 .loader11{width:100px;height:100px;position:relative;}
 .loader11 div{position:absolute;width:15px;height:15px;background:#33ffcc;border-radius:50%;animation:particleFly 2s infinite alternate;box-shadow:0 0 15px #33ffcc,0 0 25px #00ffcc;}
@@ -138,6 +109,35 @@ button:hover{
 .loader18 span{height:12px;background:#33ff00;border-radius:6px;animation:slideBar 1.2s infinite alternate;box-shadow:0 0 15px #33ff00;}
 .loader18 span:nth-child(2){animation-delay:.2s;}
 .loader18 span:nth-child(3){animation-delay:.4s;}
+
+/* NEW loaders 19-27 */
+.loader19{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#ff3399,#33ffff);box-shadow:0 0 25px #ff3399,0 0 40px #33ffff;animation:spin 1.5s linear infinite;}
+.loader20{width:90px;height:90px;position:relative;}
+.loader20 div{position:absolute;width:20px;height:20px;background:#ff5500;border-radius:50%;animation:fireRise 1.5s infinite;box-shadow:0 0 30px #ff5500,0 0 50px #ffee33;}
+.loader20 div:nth-child(2){left:30px;animation-delay:.3s;}
+.loader20 div:nth-child(3){left:60px;animation-delay:.6s;}
+.loader21{width:100px;height:100px;position:relative;}
+.loader21 div{position:absolute;width:18px;height:18px;background:#33ff66;border-radius:50%;animation:floatBlob 2s infinite alternate;box-shadow:0 0 20px #33ff66,0 0 35px #3399ff;}
+.loader21 div:nth-child(2){left:30px;animation-delay:.2s;}
+.loader21 div:nth-child(3){left:60px;animation-delay:.4s;}
+.loader21 div:nth-child(4){left:90px;animation-delay:.6s;}
+.loader22{width:80px;height:80px;border-radius:50%;border:3px solid #ff00cc;box-shadow:0 0 25px #ff00cc,0 0 50px #cc00ff;animation:spin 1.5s linear infinite;}
+.loader23{width:90px;height:90px;position:relative;}
+.loader23 div{position:absolute;width:15px;height:15px;background:#00ffaa;border-radius:50%;animation:particleFly 2s infinite alternate;box-shadow:0 0 20px #00ffaa,0 0 35px #00ff55;}
+.loader23 div:nth-child(2){left:30px;animation-delay:.3s;}
+.loader23 div:nth-child(3){left:60px;animation-delay:.6s;}
+.loader24{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#ffaa33,#ff33aa);box-shadow:0 0 25px #ffaa33,0 0 40px #ff33aa;animation:glowPulse 1.5s infinite;}
+.loader25{width:100px;height:100px;position:relative;}
+.loader25 div{position:absolute;width:18px;height:18px;background:#33ccff;border-radius:50%;animation:floatBlob 2s infinite alternate;box-shadow:0 0 25px #33ccff,0 0 40px #33ffcc;}
+.loader25 div:nth-child(2){left:30px;animation-delay:.2s;}
+.loader25 div:nth-child(3){left:60px;animation-delay:.4s;}
+.loader25 div:nth-child(4){left:90px;animation-delay:.6s;}
+.loader26{width:90px;height:90px;position:relative;}
+.loader26 div{position:absolute;width:15px;height:15px;background:#ff4444;border-radius:50%;animation:ripple 1.5s infinite;box-shadow:0 0 20px #ff4444,0 0 35px #ffcc44;}
+.loader26 div:nth-child(2){animation-delay:.3s;}
+.loader26 div:nth-child(3){animation-delay:.6s;}
+.loader27{width:80px;height:80px;border-radius:50%;background:linear-gradient(45deg,#00ffcc,#0033cc);box-shadow:0 0 25px #00ffcc,0 0 50px #0033cc;animation:glowPulse 1.5s infinite;}
+
 </style>
 </head>
 <body>
@@ -160,6 +160,15 @@ button:hover{
 <button class="btn16" onclick="showLoader('l16','#001122')">Glowing Gradient</button>
 <button class="btn17" onclick="showLoader('l17','#220011')">Fire Cascade</button>
 <button class="btn18" onclick="showLoader('l18','#003300')">Stacked Bars</button>
+<button class="btn19" onclick="showLoader('l19','#220011')">Spin Neon</button>
+<button class="btn20" onclick="showLoader('l20','#111100')">Fire Burst</button>
+<button class="btn21" onclick="showLoader('l21','#001122')">Floating Energy</button>
+<button class="btn22" onclick="showLoader('l22','#330011')">Metal Spin</button>
+<button class="btn23" onclick="showLoader('l23','#002222')">Particle Fly</button>
+<button class="btn24" onclick="showLoader('l24','#220000')">Glowing Pulse</button>
+<button class="btn25" onclick="showLoader('l25','#001111')">Floating Blobs 2</button>
+<button class="btn26" onclick="showLoader('l26','#110022')">Ripple Vortex</button>
+<button class="btn27" onclick="showLoader('l27','#001122')">Glowing Gradient 2</button>
 
 <div id="l1" class="loader-overlay"><div class="loader1"></div></div>
 <div id="l2" class="loader-overlay"><div class="loader2"><span></span><span></span><span></span></div></div>
@@ -179,6 +188,15 @@ button:hover{
 <div id="l16" class="loader-overlay"><div class="loader16"></div></div>
 <div id="l17" class="loader-overlay"><div class="loader17"><div></div><div></div><div></div></div></div>
 <div id="l18" class="loader-overlay"><div class="loader18"><span></span><span></span><span></span></div></div>
+<div id="l19" class="loader-overlay"><div class="loader19"></div></div>
+<div id="l20" class="loader-overlay"><div class="loader20"><div></div><div></div><div></div></div></div>
+<div id="l21" class="loader-overlay"><div class="loader21"><div></div><div></div><div></div><div></div></div></div>
+<div id="l22" class="loader-overlay"><div class="loader22"></div></div>
+<div id="l23" class="loader-overlay"><div class="loader23"><div></div><div></div><div></div></div></div>
+<div id="l24" class="loader-overlay"><div class="loader24"></div></div>
+<div id="l25" class="loader-overlay"><div class="loader25"><div></div><div></div><div></div><div></div></div></div>
+<div id="l26" class="loader-overlay"><div class="loader26"><div></div><div></div><div></div></div></div>
+<div id="l27" class="loader-overlay"><div class="loader27"></div></div>
 
 <script>
 function showLoader(id,bg){
@@ -189,7 +207,7 @@ function showLoader(id,bg){
     setTimeout(()=>{
         el.classList.remove("active")
         document.body.style.overflow="auto"
-    },3000)
+    },5000)
 }
 </script>
 </body>
