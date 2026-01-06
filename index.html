@@ -2,61 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Elegant Loaders</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Playfair+Display:wght@600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<title>Ultimate Loaders 9</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 <style>
 body{
-    background:#0b0e14;
+    margin:0;
+    font-family:Poppins,sans-serif;
+    height:100vh;
     display:flex;
-    gap:24px;
+    flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    margin:0;
+    gap:16px;
+    background:#111;
+    overflow:hidden;
 }
 
 button{
-    padding:14px 28px;
-    border-radius:14px;
+    padding:12px 28px;
+    border-radius:10px;
     border:none;
-    font-size:16px;
     cursor:pointer;
+    font-size:15px;
     transition:transform .2s, box-shadow .2s;
 }
 
 button:hover{
     transform:translateY(-2px);
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    box-shadow:0 8px 24px rgba(0,0,0,.5);
 }
 
-.btn1{
-    background:linear-gradient(135deg,#ff8a00,#ff3d81);
-    color:white;
-    font-family:Poppins,sans-serif;
-}
-
-.btn2{
-    background:linear-gradient(135deg,#00f5a0,#00d9f5);
-    color:#001;
-    font-family:Playfair Display,serif;
-}
-
-.btn3{
-    background:linear-gradient(135deg,#7f5cff,#00ffe1);
-    color:#fff;
-    font-family:Orbitron,sans-serif;
-}
+.btn1{background:linear-gradient(135deg,#ff8a00,#ff3d81);color:white;}
+.btn2{background:linear-gradient(135deg,#00f5a0,#00d9f5);color:#001;}
+.btn3{background:linear-gradient(135deg,#7f5cff,#00ffe1);color:#fff;}
+.btn4{background:#fff3;backdrop-filter:blur(10px);color:#111;font-weight:600;}
+.btn5{background:#222;color:#0ff;font-family:Orbitron,sans-serif;}
+.btn6{background:linear-gradient(135deg,#ff3d81,#ffb347);color:#fff;}
+.btn7{background:linear-gradient(135deg,#ff004f,#ff9500);color:white;}
+.btn8{background:linear-gradient(135deg,#6a11cb,#2575fc);color:white;}
+.btn9{background:linear-gradient(135deg,#00ffd5,#00aaff);color:#111;}
 
 .loader-overlay{
     position:fixed;
     inset:0;
-    background:rgba(10,12,20,.85);
     display:flex;
-    align-items:center;
     justify-content:center;
-    opacity:0;
+    align-items:center;
+    background:#111;
     pointer-events:none;
+    opacity:0;
     transition:opacity .4s;
+    z-index:1000;
 }
 
 .loader-overlay.active{
@@ -64,91 +60,78 @@ button:hover{
     pointer-events:auto;
 }
 
-.loader1{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    border:6px solid rgba(255,255,255,.15);
-    border-top-color:#ff3d81;
-    animation:spin 1s linear infinite;
-}
-
-.loader2{
-    display:flex;
-    gap:10px;
-}
-
-.loader2 span{
-    width:16px;
-    height:16px;
-    background:#00f5a0;
-    border-radius:50%;
-    animation:bounce 1.2s infinite ease-in-out;
-}
-
+.loader1{width:70px;height:70px;border-radius:50%;border:6px solid rgba(255,255,255,.15);border-top-color:#ff3d81;animation:spin 1s linear infinite;}
+.loader2{display:flex;gap:12px;}
+.loader2 span{width:18px;height:18px;background:#00f5a0;border-radius:50%;animation:bounce 1.2s infinite ease-in-out;}
 .loader2 span:nth-child(2){animation-delay:.15s}
 .loader2 span:nth-child(3){animation-delay:.3s}
+.loader3{width:90px;height:90px;position:relative;}
+.loader3::before,.loader3::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #00ffe1;animation:pulse 1.6s ease-out infinite;}
+.loader3::after{animation-delay:.8s}
+.loader4{width:80px;height:80px;background:rgba(255,255,255,.1);border-radius:20px;backdrop-filter:blur(10px);animation:glassSpin 1.5s linear infinite;}
+.loader5{width:120px;height:20px;display:flex;gap:6px;}
+.loader5 span{flex:1;height:100%;background:#0ff;animation:barWave 1.2s infinite ease-in-out;}
+.loader5 span:nth-child(2){animation-delay:.1s}
+.loader5 span:nth-child(3){animation-delay:.2s}
+.loader5 span:nth-child(4){animation-delay:.3s}
+.loader5 span:nth-child(5){animation-delay:.4s}
+.loader6{width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,#ff3d81,#ff8a00);animation:glowPulse 1.5s infinite;}
+.loader7{width:100px;height:100px;position:relative;}
+.loader7 div{position:absolute;width:20px;height:20px;background:orange;border-radius:50%;box-shadow:0 0 20px orange;animation:fireRise 1.2s infinite;}
+.loader7 div:nth-child(2){left:30px;animation-delay:.2s;}
+.loader7 div:nth-child(3){left:60px;animation-delay:.4s;}
+.loader8{width:120px;height:60px;position:relative;}
+.loader8 div{position:absolute;width:20px;height:20px;background:#6a11cb;border-radius:50%;animation:floatBlob 2s infinite alternate;}
+.loader8 div:nth-child(2){left:30px;animation-delay:.2s;}
+.loader8 div:nth-child(3){left:60px;animation-delay:.4s;}
+.loader8 div:nth-child(4){left:90px;animation-delay:.6s;}
+.loader9{width:90px;height:90px;display:flex;flex-direction:column;justify-content:space-between;}
+.loader9 span{height:12px;background:#00ffd5;border-radius:6px;animation:slideBar 1.2s infinite alternate;}
+.loader9 span:nth-child(2){animation-delay:.2s;}
+.loader9 span:nth-child(3){animation-delay:.4s;}
 
-.loader3{
-    width:90px;
-    height:90px;
-    position:relative;
-}
-
-.loader3::before,
-.loader3::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:50%;
-    border:2px solid #00ffe1;
-    animation:pulse 1.6s ease-out infinite;
-}
-
-.loader3::after{
-    animation-delay:.8s;
-}
-
-@keyframes spin{
-    to{transform:rotate(360deg)}
-}
-
-@keyframes bounce{
-    0%,80%,100%{transform:scale(0)}
-    40%{transform:scale(1)}
-}
-
-@keyframes pulse{
-    0%{transform:scale(.4);opacity:1}
-    100%{transform:scale(1.2);opacity:0}
-}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
+@keyframes pulse{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.2);opacity:0}}
+@keyframes glassSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes barWave{0%,100%{transform:scaleY(.2)}50%{transform:scaleY(1)}}
+@keyframes glowPulse{0%,100%{transform:scale(.8);opacity:.7}50%{transform:scale(1.2);opacity:1}}
+@keyframes fireRise{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-60px) scale(.5);opacity:0}}
+@keyframes floatBlob{0%{transform:translateY(0)}100%{transform:translateY(-20px)}}
+@keyframes slideBar{0%{transform:scaleX(.3)}100%{transform:scaleX(1)}}
 </style>
 </head>
 <body>
 
-<button class="btn1" onclick="showLoader('l1')">Click to Load</button>
-<button class="btn2" onclick="showLoader('l2')">Click to Load</button>
-<button class="btn3" onclick="showLoader('l3')">Click to Load</button>
+<button class="btn1" onclick="showLoader('l1')">Spin Circle</button>
+<button class="btn2" onclick="showLoader('l2')">Bouncing Dots</button>
+<button class="btn3" onclick="showLoader('l3')">Pulsing Rings</button>
+<button class="btn4" onclick="showLoader('l4')">Glass Spin</button>
+<button class="btn5" onclick="showLoader('l5')">Digital Bars</button>
+<button class="btn6" onclick="showLoader('l6')">Glowing Blob</button>
+<button class="btn7" onclick="showLoader('l7')">Fire Sparks</button>
+<button class="btn8" onclick="showLoader('l8')">Floating Blobs</button>
+<button class="btn9" onclick="showLoader('l9')">Futuristic Bars</button>
 
-<div id="l1" class="loader-overlay">
-    <div class="loader1"></div>
-</div>
-
-<div id="l2" class="loader-overlay">
-    <div class="loader2">
-        <span></span><span></span><span></span>
-    </div>
-</div>
-
-<div id="l3" class="loader-overlay">
-    <div class="loader3"></div>
-</div>
+<div id="l1" class="loader-overlay"><div class="loader1"></div></div>
+<div id="l2" class="loader-overlay"><div class="loader2"><span></span><span></span><span></span></div></div>
+<div id="l3" class="loader-overlay"><div class="loader3"></div></div>
+<div id="l4" class="loader-overlay"><div class="loader4"></div></div>
+<div id="l5" class="loader-overlay"><div class="loader5"><span></span><span></span><span></span><span></span><span></span></div></div>
+<div id="l6" class="loader-overlay"><div class="loader6"></div></div>
+<div id="l7" class="loader-overlay"><div class="loader7"><div></div><div></div><div></div></div></div>
+<div id="l8" class="loader-overlay"><div class="loader8"><div></div><div></div><div></div><div></div></div></div>
+<div id="l9" class="loader-overlay"><div class="loader9"><span></span><span></span><span></span></div></div>
 
 <script>
 function showLoader(id){
+    document.body.style.overflow="hidden";
     const el=document.getElementById(id)
     el.classList.add("active")
-    setTimeout(()=>el.classList.remove("active"),2500)
+    setTimeout(()=>{
+        el.classList.remove("active")
+        document.body.style.overflow="auto";
+    },3000)
 }
 </script>
 
