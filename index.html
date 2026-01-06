@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ultimate Loaders 9</title>
+<title>18 Cinematic Loaders</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 <style>
 body{
@@ -13,25 +13,22 @@ body{
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    gap:16px;
+    gap:12px;
     background:#111;
     overflow:hidden;
 }
-
 button{
     padding:12px 28px;
-    border-radius:10px;
+    border-radius:12px;
     border:none;
     cursor:pointer;
     font-size:15px;
-    transition:transform .2s, box-shadow .2s;
+    transition:transform .2s, box-shadow .3s, background .5s;
 }
-
 button:hover{
     transform:translateY(-2px);
     box-shadow:0 8px 24px rgba(0,0,0,.5);
 }
-
 .btn1{background:linear-gradient(135deg,#ff8a00,#ff3d81);color:white;}
 .btn2{background:linear-gradient(135deg,#00f5a0,#00d9f5);color:#001;}
 .btn3{background:linear-gradient(135deg,#7f5cff,#00ffe1);color:#fff;}
@@ -41,6 +38,15 @@ button:hover{
 .btn7{background:linear-gradient(135deg,#ff004f,#ff9500);color:white;}
 .btn8{background:linear-gradient(135deg,#6a11cb,#2575fc);color:white;}
 .btn9{background:linear-gradient(135deg,#00ffd5,#00aaff);color:#111;}
+.btn10{background:linear-gradient(135deg,#ff00ff,#ff9900);color:#fff;}
+.btn11{background:linear-gradient(135deg,#33ffcc,#0066ff);color:#001;}
+.btn12{background:linear-gradient(135deg,#ff5555,#ffbb00);color:white;}
+.btn13{background:linear-gradient(135deg,#00ff88,#00ffaa);color:#001;}
+.btn14{background:linear-gradient(135deg,#ff66ff,#6633ff);color:white;}
+.btn15{background:linear-gradient(135deg,#ffee00,#ff4400);color:#111;}
+.btn16{background:linear-gradient(135deg,#00ffff,#0033ff);color:#111;}
+.btn17{background:linear-gradient(135deg,#ff0099,#9900ff);color:white;}
+.btn18{background:linear-gradient(135deg,#33ff00,#009900);color:#111;}
 
 .loader-overlay{
     position:fixed;
@@ -48,48 +54,19 @@ button:hover{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#111;
-    pointer-events:none;
     opacity:0;
-    transition:opacity .4s;
+    pointer-events:none;
+    transition:opacity .6s ease, background .5s ease, transform .6s ease;
     z-index:1000;
+    transform:scale(0.8);
 }
-
 .loader-overlay.active{
     opacity:1;
     pointer-events:auto;
+    transform:scale(1);
 }
 
-.loader1{width:70px;height:70px;border-radius:50%;border:6px solid rgba(255,255,255,.15);border-top-color:#ff3d81;animation:spin 1s linear infinite;}
-.loader2{display:flex;gap:12px;}
-.loader2 span{width:18px;height:18px;background:#00f5a0;border-radius:50%;animation:bounce 1.2s infinite ease-in-out;}
-.loader2 span:nth-child(2){animation-delay:.15s}
-.loader2 span:nth-child(3){animation-delay:.3s}
-.loader3{width:90px;height:90px;position:relative;}
-.loader3::before,.loader3::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #00ffe1;animation:pulse 1.6s ease-out infinite;}
-.loader3::after{animation-delay:.8s}
-.loader4{width:80px;height:80px;background:rgba(255,255,255,.1);border-radius:20px;backdrop-filter:blur(10px);animation:glassSpin 1.5s linear infinite;}
-.loader5{width:120px;height:20px;display:flex;gap:6px;}
-.loader5 span{flex:1;height:100%;background:#0ff;animation:barWave 1.2s infinite ease-in-out;}
-.loader5 span:nth-child(2){animation-delay:.1s}
-.loader5 span:nth-child(3){animation-delay:.2s}
-.loader5 span:nth-child(4){animation-delay:.3s}
-.loader5 span:nth-child(5){animation-delay:.4s}
-.loader6{width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,#ff3d81,#ff8a00);animation:glowPulse 1.5s infinite;}
-.loader7{width:100px;height:100px;position:relative;}
-.loader7 div{position:absolute;width:20px;height:20px;background:orange;border-radius:50%;box-shadow:0 0 20px orange;animation:fireRise 1.2s infinite;}
-.loader7 div:nth-child(2){left:30px;animation-delay:.2s;}
-.loader7 div:nth-child(3){left:60px;animation-delay:.4s;}
-.loader8{width:120px;height:60px;position:relative;}
-.loader8 div{position:absolute;width:20px;height:20px;background:#6a11cb;border-radius:50%;animation:floatBlob 2s infinite alternate;}
-.loader8 div:nth-child(2){left:30px;animation-delay:.2s;}
-.loader8 div:nth-child(3){left:60px;animation-delay:.4s;}
-.loader8 div:nth-child(4){left:90px;animation-delay:.6s;}
-.loader9{width:90px;height:90px;display:flex;flex-direction:column;justify-content:space-between;}
-.loader9 span{height:12px;background:#00ffd5;border-radius:6px;animation:slideBar 1.2s infinite alternate;}
-.loader9 span:nth-child(2){animation-delay:.2s;}
-.loader9 span:nth-child(3){animation-delay:.4s;}
-
+/* Base Animations */
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes bounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
 @keyframes pulse{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.2);opacity:0}}
@@ -99,19 +76,90 @@ button:hover{
 @keyframes fireRise{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-60px) scale(.5);opacity:0}}
 @keyframes floatBlob{0%{transform:translateY(0)}100%{transform:translateY(-20px)}}
 @keyframes slideBar{0%{transform:scaleX(.3)}100%{transform:scaleX(1)}}
+@keyframes particleFly{0%{transform:translateY(0) translateX(0)}100%{transform:translateY(-50px) translateX(30px)}}
+@keyframes vortexSpin{0%{transform:rotate(0deg) translateX(0)}100%{transform:rotate(360deg) translateX(20px)}}
+
+/* Loader Styles */
+.loader1{width:70px;height:70px;border-radius:50%;border:6px solid rgba(255,255,255,.15);border-top-color:#ff3d81;animation:spin 1s linear infinite;box-shadow:0 0 20px #ff3d81 inset,0 0 40px #ff8a00;}
+.loader2{display:flex;gap:12px;}
+.loader2 span{width:18px;height:18px;background:#00f5a0;border-radius:50%;animation:bounce 1.2s infinite ease-in-out;box-shadow:0 0 15px #00f5a0;}
+.loader2 span:nth-child(2){animation-delay:.15s}
+.loader2 span:nth-child(3){animation-delay:.3s}
+.loader3{width:90px;height:90px;position:relative;}
+.loader3::before,.loader3::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #00ffe1;animation:pulse 1.6s ease-out infinite;box-shadow:0 0 25px #00ffe1;}
+.loader3::after{animation-delay:.8s}
+.loader4{width:80px;height:80px;background:rgba(255,255,255,.1);border-radius:20px;backdrop-filter:blur(12px);animation:glassSpin 1.5s linear infinite;box-shadow:0 0 40px #fff3 inset,0 0 80px #fff5;}
+.loader5{width:120px;height:20px;display:flex;gap:6px;}
+.loader5 span{flex:1;height:100%;background:#0ff;animation:barWave 1.2s infinite ease-in-out;box-shadow:0 0 20px #0ff;}
+.loader5 span:nth-child(2){animation-delay:.1s}
+.loader5 span:nth-child(3){animation-delay:.2s}
+.loader5 span:nth-child(4){animation-delay:.3s}
+.loader5 span:nth-child(5){animation-delay:.4s}
+.loader6{width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,#ff3d81,#ff8a00);animation:glowPulse 1.5s infinite;box-shadow:0 0 40px #ff3d81,0 0 60px #ff8a00;}
+.loader7{width:100px;height:100px;position:relative;}
+.loader7 div{position:absolute;width:20px;height:20px;background:orange;border-radius:50%;box-shadow:0 0 20px orange,0 0 40px orange;animation:fireRise 1.2s infinite;}
+.loader7 div:nth-child(2){left:30px;animation-delay:.2s;}
+.loader7 div:nth-child(3){left:60px;animation-delay:.4s;}
+.loader8{width:120px;height:60px;position:relative;}
+.loader8 div{position:absolute;width:20px;height:20px;background:#6a11cb;border-radius:50%;animation:floatBlob 2s infinite alternate;box-shadow:0 0 20px #6a11cb;}
+.loader8 div:nth-child(2){left:30px;animation-delay:.2s;}
+.loader8 div:nth-child(3){left:60px;animation-delay:.4s;}
+.loader8 div:nth-child(4){left:90px;animation-delay:.6s;}
+.loader9{width:90px;height:90px;display:flex;flex-direction:column;justify-content:space-between;}
+.loader9 span{height:12px;background:#00ffd5;border-radius:6px;animation:slideBar 1.2s infinite alternate;box-shadow:0 0 15px #00ffd5;}
+.loader9 span:nth-child(2){animation-delay:.2s;}
+.loader9 span:nth-child(3){animation-delay:.4s;}
+
+/* Ultra advanced loaders */
+.loader10{width:80px;height:80px;border-radius:50%;background:linear-gradient(45deg,#ff00ff,#ff9900);box-shadow:0 0 25px #ff00ff,0 0 50px #ff9900 inset;animation:spin 1.2s linear infinite;}
+.loader11{width:100px;height:100px;position:relative;}
+.loader11 div{position:absolute;width:15px;height:15px;background:#33ffcc;border-radius:50%;animation:particleFly 2s infinite alternate;box-shadow:0 0 15px #33ffcc,0 0 25px #00ffcc;}
+.loader11 div:nth-child(2){left:30px;animation-delay:.3s;}
+.loader11 div:nth-child(3){left:60px;animation-delay:.6s;}
+.loader11 div:nth-child(4){left:80px;animation-delay:.9s;}
+.loader12{width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,#ff5555,#ffbb00);box-shadow:0 0 30px #ff5555;animation:glowPulse 1.5s infinite;}
+.loader13{width:100px;height:100px;position:relative;}
+.loader13 div{position:absolute;width:20px;height:20px;background:#00ff88;border-radius:50%;animation:floatBlob 2s infinite alternate;box-shadow:0 0 20px #00ff88;}
+.loader13 div:nth-child(2){left:30px;animation-delay:.2s;}
+.loader13 div:nth-child(3){left:60px;animation-delay:.4s;}
+.loader13 div:nth-child(4){left:90px;animation-delay:.6s;}
+.loader14{width:90px;height:90px;position:relative;}
+.loader14 div{position:absolute;width:15px;height:15px;border-radius:50%;border:2px solid #ff66ff;animation:vortexSpin 1.5s linear infinite;box-shadow:0 0 25px #ff66ff;}
+.loader14 div:nth-child(2){animation-delay:.3s;}
+.loader14 div:nth-child(3){animation-delay:.6s;}
+.loader15{width:120px;height:20px;display:flex;gap:4px;}
+.loader15 span{flex:1;height:100%;background:#ffee00;animation:barWave 1.2s infinite ease-in-out;box-shadow:0 0 20px #ffee00;}
+.loader16{width:80px;height:80px;border-radius:50%;background:linear-gradient(45deg,#00ffff,#0033ff);box-shadow:0 0 25px #00ffff,0 0 50px #0033ff;animation:glowPulse 1.5s infinite;}
+.loader17{width:100px;height:100px;position:relative;}
+.loader17 div{position:absolute;width:18px;height:18px;background:#ff0099;border-radius:50%;animation:fireRise 1.2s infinite;box-shadow:0 0 25px #ff0099;}
+.loader17 div:nth-child(2){left:30px;animation-delay:.2s;}
+.loader17 div:nth-child(3){left:60px;animation-delay:.4s;}
+.loader18{width:90px;height:90px;display:flex;flex-direction:column;justify-content:space-between;}
+.loader18 span{height:12px;background:#33ff00;border-radius:6px;animation:slideBar 1.2s infinite alternate;box-shadow:0 0 15px #33ff00;}
+.loader18 span:nth-child(2){animation-delay:.2s;}
+.loader18 span:nth-child(3){animation-delay:.4s;}
 </style>
 </head>
 <body>
 
-<button class="btn1" onclick="showLoader('l1')">Spin Circle</button>
-<button class="btn2" onclick="showLoader('l2')">Bouncing Dots</button>
-<button class="btn3" onclick="showLoader('l3')">Pulsing Rings</button>
-<button class="btn4" onclick="showLoader('l4')">Glass Spin</button>
-<button class="btn5" onclick="showLoader('l5')">Digital Bars</button>
-<button class="btn6" onclick="showLoader('l6')">Glowing Blob</button>
-<button class="btn7" onclick="showLoader('l7')">Fire Sparks</button>
-<button class="btn8" onclick="showLoader('l8')">Floating Blobs</button>
-<button class="btn9" onclick="showLoader('l9')">Futuristic Bars</button>
+<button class="btn1" onclick="showLoader('l1','#1a001a')">Spin Circle</button>
+<button class="btn2" onclick="showLoader('l2','#001f1f')">Bouncing Dots</button>
+<button class="btn3" onclick="showLoader('l3','#001122')">Pulsing Rings</button>
+<button class="btn4" onclick="showLoader('l4','#ffffff22')">Glass Spin</button>
+<button class="btn5" onclick="showLoader('l5','#001111')">Digital Bars</button>
+<button class="btn6" onclick="showLoader('l6','#220000')">Glowing Blob</button>
+<button class="btn7" onclick="showLoader('l7','#111000')">Fire Sparks</button>
+<button class="btn8" onclick="showLoader('l8','#110022')">Floating Blobs</button>
+<button class="btn9" onclick="showLoader('l9','#001133')">Futuristic Bars</button>
+<button class="btn10" onclick="showLoader('l10','#330011')">Neon Orb</button>
+<button class="btn11" onclick="showLoader('l11','#002222')">Particles Fly</button>
+<button class="btn12" onclick="showLoader('l12','#220000')">Glowing Radial</button>
+<button class="btn13" onclick="showLoader('l13','#001111')">Floating Orbs</button>
+<button class="btn14" onclick="showLoader('l14','#110022')">Vortex Spin</button>
+<button class="btn15" onclick="showLoader('l15','#111100')">Digital Wave</button>
+<button class="btn16" onclick="showLoader('l16','#001122')">Glowing Gradient</button>
+<button class="btn17" onclick="showLoader('l17','#220011')">Fire Cascade</button>
+<button class="btn18" onclick="showLoader('l18','#003300')">Stacked Bars</button>
 
 <div id="l1" class="loader-overlay"><div class="loader1"></div></div>
 <div id="l2" class="loader-overlay"><div class="loader2"><span></span><span></span><span></span></div></div>
@@ -122,18 +170,27 @@ button:hover{
 <div id="l7" class="loader-overlay"><div class="loader7"><div></div><div></div><div></div></div></div>
 <div id="l8" class="loader-overlay"><div class="loader8"><div></div><div></div><div></div><div></div></div></div>
 <div id="l9" class="loader-overlay"><div class="loader9"><span></span><span></span><span></span></div></div>
+<div id="l10" class="loader-overlay"><div class="loader10"></div></div>
+<div id="l11" class="loader-overlay"><div class="loader11"><div></div><div></div><div></div><div></div></div></div>
+<div id="l12" class="loader-overlay"><div class="loader12"></div></div>
+<div id="l13" class="loader-overlay"><div class="loader13"><div></div><div></div><div></div><div></div></div></div>
+<div id="l14" class="loader-overlay"><div class="loader14"><div></div><div></div><div></div></div></div>
+<div id="l15" class="loader-overlay"><div class="loader15"><span></span><span></span><span></span><span></span><span></span></div></div>
+<div id="l16" class="loader-overlay"><div class="loader16"></div></div>
+<div id="l17" class="loader-overlay"><div class="loader17"><div></div><div></div><div></div></div></div>
+<div id="l18" class="loader-overlay"><div class="loader18"><span></span><span></span><span></span></div></div>
 
 <script>
-function showLoader(id){
-    document.body.style.overflow="hidden";
+function showLoader(id,bg){
     const el=document.getElementById(id)
+    el.style.background=bg
+    document.body.style.overflow="hidden"
     el.classList.add("active")
     setTimeout(()=>{
         el.classList.remove("active")
-        document.body.style.overflow="auto";
+        document.body.style.overflow="auto"
     },3000)
 }
 </script>
-
 </body>
 </html>
